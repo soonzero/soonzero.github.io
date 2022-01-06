@@ -1,0 +1,74 @@
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+/* Common things */
+
+* {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: auto;
+  height: 100vh;
+}
+
+#login-form.hidden {
+  display: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+ul button {
+  border: none;
+  background-color: transparent;
+}
+
+li {
+  text-align: left;
+}
+
+/* Background image */
+
+/* 방법을 더 찾아봐야 함 */
+
+/* Weather */
+
+#weather {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 2;
+}
+
+/* Clock */
+
+#clock {
+  font-size: 120px;
+  margin-bottom: 25px;
+}
+
+/* login-form */
+
+#login-input {
+  border-bottom: 2px solid white;
+}
