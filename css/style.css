@@ -6,69 +6,145 @@
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   box-sizing: border-box;
   margin: 0;
+  color: white;
+  font-weight: 700;
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  width: auto;
-  height: 100vh;
-}
-
-#login-form.hidden {
+#login-form.hidden,
+#greeting.hidden {
   display: none;
 }
 
-input {
-  border: none;
-  background-color: transparent;
-  text-align: center;
+#container {
+  position: relative;
 }
-
-input:focus {
-  outline: none;
-}
-
-ul {
-  list-style: none;
-  text-align: left;
-  padding: 0;
-}
-
-ul button {
-  border: none;
-  background-color: transparent;
-}
-
-li {
-  text-align: left;
-}
-
-/* Background image */
-
-/* 방법을 더 찾아봐야 함 */
-
 /* Weather */
 
 #weather {
-  font-size: 20px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
   font-weight: 700;
+  font-size: 20px;
   text-align: center;
-  line-height: 2;
 }
 
 /* Clock */
 
 #clock {
-  font-size: 120px;
-  margin-bottom: 25px;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
 }
 
-/* login-form */
+/* Username-input */
+
+#login-form,
+#greeting {
+  position: fixed;
+  top: 52.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 #login-input {
+  border: none;
   border-bottom: 2px solid white;
+  height: 30px;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+#login-input:focus {
+  outline: none;
+  text-align: center;
+}
+
+#login-input::placeholder {
+  text-align: center;
+  color: white;
+}
+
+/* To-do */
+
+#todo {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 366px;
+}
+
+#todo-form input {
+  border: none;
+  margin-bottom: 40px;
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+}
+
+#todo-form input::placeholder {
+  color: white;
+}
+
+#todo-form input:focus {
+  outline: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  height: 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list button {
+  border: none;
+  background-color: white;
+  padding: 0 2px 2px 2px;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 21px;
+  cursor: pointer;
+}
+
+/* Quote */
+
+#quote {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#quote span:first-child {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Background image */
+
+img {
+  width: 100vw;
+  height: 100vh;
+}
+
+#box {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
