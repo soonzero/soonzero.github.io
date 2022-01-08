@@ -9,7 +9,7 @@ const container = document.getElementById("container")
 const bgImage = document.createElement("img");
 
 
-bgImage.src = `../img/${chosenImage}`
+bgImage.src = `./img/${chosenImage}`
 
 container.prepend(bgImage);
 // document.body.appendChild(bgImage);
