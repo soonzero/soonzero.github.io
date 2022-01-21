@@ -16,15 +16,17 @@ function paintGreetings(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME);
   const date = new Date();
   const hours = date.getHours();
-  if (hours < 11) {
-    greeting.innerText = `Good morning, ${username}!`;
-  } else if (hours < 18) {
-    greeting.innerText = `Good afternoon, ${username}!`;
-  } else if (hours < 23) {
-    greeting.innerText = `Good evening, ${username}!`;
+  let time;
+  if (hours < 11 && hours < 6) {
+    time = "morning";
+  } else if (hours < 17) {
+    time = "afternoon";
+  } else if (hours < 24) {
+    time = "evening";
   } else {
-    greeting.innerText = `It's time for goodbye, ${username}!`;
+    time = "night";
   }
+  greeting.innerText = `Good ${time}, ${username}!`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

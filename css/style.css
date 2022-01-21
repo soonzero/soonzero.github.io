@@ -1,150 +1,182 @@
-@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
-/* Common things */
-
 * {
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
   box-sizing: border-box;
   margin: 0;
-  color: white;
-  font-weight: 700;
 }
 
-#login-form.hidden,
-#greeting.hidden {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 1s;
+}
+
+.hidden {
   display: none;
 }
 
-#container {
-  position: relative;
+input {
+  background: none;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  padding: 10px;
 }
+
+input::placeholder {
+  color: white;
+}
+
+input:active,
+input:focus {
+  outline: none;
+}
+
 /* Weather */
 
 #weather {
-  position: fixed;
+  position: absolute;
+  width: 100px;
+  height: 70px;
   top: 30px;
   right: 30px;
-  font-weight: 700;
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
   text-align: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  border: 2px solid white;
+}
+
+/* Main */
+
+#main-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 200px;
+  height: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  border-radius: 50px;
+  transition: background-color 400ms ease-in-out;
+}
+
+#main-view:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Clock */
 
 #clock {
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-}
-
-/* Username-input */
-
-#login-form,
-#greeting {
-  position: fixed;
-  top: 52.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#login-input {
-  border: none;
-  border-bottom: 2px solid white;
-  height: 30px;
-  font-size: 20px;
-  background-color: transparent;
-}
-
-#login-input:focus {
-  outline: none;
-  text-align: center;
-}
-
-#login-input::placeholder {
-  text-align: center;
-  color: white;
+  font-size: 10em;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
 
 /* To-do */
 
-#todo {
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 366px;
-}
-
-#todo-form input {
-  border: none;
-  margin-bottom: 40px;
-  font-size: 20px;
-  text-align: center;
-  background-color: transparent;
-  border-bottom: 2px solid white;
-}
-
-#todo-form input::placeholder {
-  color: white;
-}
-
-#todo-form input:focus {
-  outline: none;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  height: 18px;
-  margin-bottom: 8px;
-  font-size: 15px;
+#todo-form {
+  margin-bottom: 20px;
 }
 
 #todo-list {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75%;
+  margin: auto;
 }
 
-#todo-list button {
+#todo-list > li {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+#todo-list > li > button {
+  background: none;
+  padding-top: 3px;
   border: none;
-  background-color: white;
-  padding: 0 2px 2px 2px;
-  border-radius: 50%;
-  margin-right: 10px;
-  height: 21px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: opacity 300ms ease-in-out;
+}
+
+#todo-list > li > button:hover {
+  opacity: 0.5;
+}
+
+/* Login & Greeting */
+
+#login-input {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+#greeting {
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+/* Lyrics */
+
+#lyrics {
+  position: absolute;
+  bottom: 0;
+  margin: 15px;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 800ms ease-in-out, transform 400ms ease-in-out;
+}
+
+#lyrics:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+#words {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Background Change */
+
+#background-change {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 15px;
+  padding-bottom: 10px;
   cursor: pointer;
 }
 
-/* Quote */
+/* Location */
 
-#quote {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-#quote span:first-child {
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-/* Background image */
-
-img {
-  width: 100vw;
-  height: 100vh;
-}
-
-#box {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  position: fixed;
-  top: 0;
+#location {
+  position: absolute;
+  padding: 15px;
   left: 0;
-  opacity: 0.5;
+  bottom: 0;
+  opacity: 0.75;
 }
