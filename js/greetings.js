@@ -3,6 +3,7 @@ const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
+const documentTitle = document.querySelector("#documentTitle");
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -27,6 +28,7 @@ function paintGreetings(username) {
     time = "night";
   }
   greeting.innerText = `Good ${time}, ${username}!`;
+  documentTitle.innerText = `Welcome, ${username}`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
